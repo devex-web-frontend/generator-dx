@@ -45,11 +45,11 @@ module.exports = yeoman.generators.Base.extend({
 		}.bind(this));
 	},
 	writing: function() {
-		var overridesFolder = path.join(
+		var overridesFolder = this.config.get(CONSTANTS.CFG_TPL_OVERRIDES_FOLDER) ? path.join(
 			this.destinationRoot(),
 			this.config.get(CONSTANTS.CFG_TPL_OVERRIDES_FOLDER),
 			'component'
-		);
+		) : this.destinationRoot();
 		var componentsFolder = path.join(this.destinationRoot(), this.config.get(CONSTANTS.CFG_COMPONENTS_FOLDER));
 		var componentName = this.props.componentName;
 
