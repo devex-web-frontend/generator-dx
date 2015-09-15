@@ -4,13 +4,9 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 
-var CREATE_COMPONENT = {
-	value: 'createComponent',
-	name: 'Create basic component structure'
-};
-var CREATE_PAGE = {
-	value: 'createPage',
-	name: 'Create new project page'
+var CREATE_ENTITY = {
+	value: 'createEntity',
+	name: 'Create one of project entity'
 };
 
 module.exports = yeoman.generators.Base.extend({
@@ -21,8 +17,8 @@ module.exports = yeoman.generators.Base.extend({
 				type: 'list',
 				name: 'action',
 				message: 'What you want to do?',
-				choices: [CREATE_COMPONENT],
-				default: CREATE_COMPONENT.value
+				choices: [CREATE_ENTITY],
+				default: CREATE_ENTITY.value
 			}
 		];
 
@@ -36,8 +32,8 @@ module.exports = yeoman.generators.Base.extend({
 		}.bind(this));
 	},
 	end: function() {
-		if (this.props.action === CREATE_COMPONENT.value) {
-			this.composeWith('dx:component');
+		if (this.props.action === CREATE_ENTITY.value) {
+			this.composeWith('dx:entity');
 		}
 	}
 });

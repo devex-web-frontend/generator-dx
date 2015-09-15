@@ -1,4 +1,7 @@
 module.exports = {
-	CFG_TPL_OVERRIDES_FOLDER: 'templateOverridesFolder',
-	CFG_COMPONENTS_FOLDER: 'componentsFolder'
+	CFG_SECTION: 'entities',
+	CFG_NAME: 'name',
+	CFG_DESTINATION_FOLDER: 'dest',
+	CFG_TEMPLATE_SRC_FOLDER: 'templatesSrc',
+	CFG_DEFAULT_FLAG: 'isDefault'
 };
