@@ -22,9 +22,7 @@ module.exports = yeoman.generators.Base.extend({
 			}
 		];
 
-		this.log(yosay(
-			'Hi'
-		));
+		this.log(require('../logo.js'));
 
 		this.prompt(prompts, function(props) {
 			this.props = props;
