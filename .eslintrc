@@ -1,0 +1,3 @@
+{
+  "extends": "./generators/app/templates/node_modules/dx-lint/.eslintrc"
+}

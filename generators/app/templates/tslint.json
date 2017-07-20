@@ -1,0 +1,8 @@
+{
+  "extends": [
+    "./node_modules/dx-lint/tslint.json"
+  ],
+  "rules": {
+    "no-any": true
+  }
+}

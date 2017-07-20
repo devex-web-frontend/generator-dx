@@ -15,5 +15,12 @@
   "dependencies": {
     "chalk": "^1.0.0",
     "yeoman-generator": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^4.2.0",
+    "eslint-plugin-babel": "^4.1.1",
+    "tslint": "^5.5.0",
+    "typescript": "^2.4.1"
   }
 }
