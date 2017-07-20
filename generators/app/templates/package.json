@@ -4,11 +4,17 @@
   "description": "",
   "scripts": {
     "start": "node ./scripts/run.js ./scripts/start.js",
-    "jest": "jest"
+    "jest": "jest",
+    "bower": "bower",
+    "postinstall": "bower install",
+    "eslint": "eslint --ext .js,.jsx .",
+    "tslint": "tslint './src/**/*.ts' './src/**/*.tsx'",
+    "test": "npm run eslint && npm run tslint && npm run jest"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/classnames": "^2.2.0",
     "@types/jest": "^20.0.4",
     "@types/node": "^8.0.14",
     "@types/react": "^15.0.38",
@@ -16,6 +22,7 @@
     "autoprefixer": "^7.1.2",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^6.4.1",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-function-bind": "^6.22.0",
@@ -23,10 +30,11 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.24.1",
+    "bower": "^1.8.0",
+    "classnames": "^2.2.5",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.4",
-    "dx-lint": "github:devex-web-frontend/dx-lint",
-    "dx-util": "github:devex-web-frontend/dx-util#0.10.31",
+    "dx-lint": "github:devex-web-frontend/dx-lint#0.4.0",
     "eslint": "^4.2.0",
     "eslint-plugin-babel": "^4.1.1",
     "glob": "^7.1.2",
@@ -46,6 +54,7 @@
     "svgo-loader": "^1.2.1",
     "ts-loader": "^2.3.1",
     "tslib": "^1.7.1",
+    "tslint": "^5.5.0",
     "typescript": "^2.4.1",
     "webpack": "^1.15.0",
     "webpack-split-by-path": "^1.0.0"
@@ -61,16 +70,21 @@
       "<rootDir>/src"
     ],
     "setupFiles": [
-      "./scripts/jest.init.js"
+      "./scripts/jest/setup.js"
     ],
     "timers": "fake",
+    "moduleDirectories": [
+      "node_modules",
+      "bower_components"
+    ],
     "moduleFileExtensions": [
       "ts",
       "js",
+      "jsx",
       "tsx"
     ],
     "transform": {
-      "^.+\\.(ts|tsx)$": "<rootDir>/scripts/jest.ts-preprocessor.js"
+      "^.+\\.(ts|tsx)$": "<rootDir>/scripts/jest/typescriptTransform.js"
     },
     "testRegex": "/__tests__/.*\\.(ts|tsx|js|jsx)$",
     "verbose": true,

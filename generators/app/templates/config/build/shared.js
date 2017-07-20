@@ -28,6 +28,7 @@ const plugins = [
 
 const noParse = [
 	ENV.CORE_JS,
+	ENV.REGENERATOR_RUNTIME,
 	...glob.sync(path.join(ENV.LIB_PATH, '/*'), {
 		ignore: ENV.ES6
 	}).map(file => path.resolve(file))

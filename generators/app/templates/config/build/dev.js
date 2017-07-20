@@ -25,7 +25,7 @@ const plugins = [
 	})
 ];
 
-export default (host, port, includeRegeneratorRuntime) => {
+export default (host, port, includeRegeneratorRuntime = false) => {
 	const config = shared();
 
 	const index = [

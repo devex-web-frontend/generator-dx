@@ -11,7 +11,6 @@ const SVG_SPRITE_ENTRY = module.exports.SVG_SPRITE_ENTRY = 'svg-sprite.js';
 const CORE_JS = module.exports.CORE_JS = 'core-js/client/shim.min.js';
 const REGENERATOR_RUNTIME = module.exports.REGENERATOR_RUNTIME = 'regenerator-runtime/runtime';
 const FETCH = module.exports.FETCH = 'isomorphic-fetch';
-const POLYFILLS = module.exports.POLYFILLS = path.resolve(SRC_PATH, 'polyfills.ts');
 
 const ES6 = module.exports.ES6 = [
 	path.resolve(NODE_MODULES_PATH, 'svg-sprite-extract-plugin'),
