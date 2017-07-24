@@ -28,7 +28,7 @@
     }
   },
   "include": [
-    "bower_components/dx-components/src/typings",
+    "node_modules/dx-components/src/typings",
     "src/**/*"
   ]
 }

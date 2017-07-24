@@ -35,8 +35,8 @@ const noParse = [
 ];
 
 const alias = {
-	config: path.resolve(ENV.SRC_PATH, 'config/config.styl'),
-	theme: path.resolve(ENV.ROOT, 'config/theme/theme.js')
+	config: path.resolve(ENV.SRC_PATH, 'config/styles.config.styl'),
+	// theme: path.resolve(ENV.ROOT, 'config/theme/theme.js')
 };
 
 const loaders = [

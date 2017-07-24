@@ -1,0 +1,1 @@
+export * from 'dx-components/src/components/Button/Button.page';

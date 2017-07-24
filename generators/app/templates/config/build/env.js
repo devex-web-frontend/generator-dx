@@ -14,13 +14,13 @@ const FETCH = module.exports.FETCH = 'isomorphic-fetch';
 
 const ES6 = module.exports.ES6 = [
 	path.resolve(NODE_MODULES_PATH, 'svg-sprite-extract-plugin'),
-	path.resolve(LIB_PATH, 'dx-util'),
-	path.resolve(LIB_PATH, 'dx-components'),
+	// path.resolve(LIB_PATH, 'dx-util'),
+	path.resolve(NODE_MODULES_PATH, 'dx-components'),
 	path.resolve(LIB_PATH, 'dx-ui')
 ];
 
 const CSS_MODULES = module.exports.CSS_MODULES = [
-	path.resolve(LIB_PATH, 'dx-components/src'),
+	path.resolve(NODE_MODULES_PATH, 'dx-components/src'),
 	path.resolve(LIB_PATH, 'dx-ui/src')
 ];
 
