@@ -8,12 +8,11 @@ module.exports = class extends Generator {
 		this.argument('name', {
 			type: String,
 			required: true
-		})
+		});
 	}
 
 	configuring() {
 		this.destinationRoot(this.options.name);
-		this.log(this.destinationRoot(), this.sourceRoot());
 	}
 
 	writing() {
