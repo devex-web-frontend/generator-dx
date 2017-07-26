@@ -1,6 +1,5 @@
 declare module '~DemoComponent';
 declare module 'dx-components/src/components/Button/Button.page';
-declare module 'dx-util/*';
 declare module 'redbox-react' {
 	type TRedboxProps = {
 		error?: Error
