@@ -1,0 +1,10 @@
+/.idea
+/.vscode
+bash.exe.stackdump
+package-lock.json
+/tslint.json
+/.npmignore
+/.editorconfig
+/tsconfig.json
+/.eslintignore
+/.eslintrc
