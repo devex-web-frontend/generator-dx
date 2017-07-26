@@ -19,13 +19,7 @@
     ],
     "outDir": "dist",
     "target": "es5",
-    "pretty": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": [
-        "bower_components/*"
-      ]
-    }
+    "pretty": true
   },
   "include": [
     "node_modules/dx-components/src/typings",
