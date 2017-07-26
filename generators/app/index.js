@@ -23,8 +23,14 @@ module.exports = class extends Generator {
 		};
 		this.fs.copyTpl(path.join(source, '**/*.*'), dest, context, {}, {
 			globOptions: {
-				dot: true
+				dot: true,
+				ignore: [
+					path.join(source, '**/*.html')
+				]
 			}
+		});
+		this.fs.copy(path.join(source, '**/*.html'), dest, {
+			dot: true
 		});
 	}
 };

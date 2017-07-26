@@ -16,8 +16,7 @@ const plugins = [
 		{
 			name: 'vendor',
 			path: [
-				ENV.NODE_MODULES_PATH,
-				ENV.LIB_PATH
+				ENV.NODE_MODULES_PATH
 			]
 		}
 	], {

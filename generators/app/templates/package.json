@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node ./scripts/run.js ./scripts/start.js",
+    "build": "node ./scripts/run.js ./scripts/build.js",
     "jest": "jest",
     "eslint": "eslint --ext .js,.jsx .",
     "tslint": "tslint './src/**/*.ts' './src/**/*.tsx'",

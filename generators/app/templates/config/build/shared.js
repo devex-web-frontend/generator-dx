@@ -1,5 +1,4 @@
 import path from 'path';
-import glob from 'glob';
 import * as ENV from './env';
 import autoprefixer from 'autoprefixer';
 import SVGSpriteExtractPlugin from 'svg-sprite-extract-plugin';
@@ -9,10 +8,7 @@ const FILE_PATTERN = /\.png$|\.jpg$|\.gif$|\.swf$|\.ico$|\.(ttf|eot|woff(2)?)(\?
 const STYLUS_OPTIONS = {
 	nocheck: true,
 	'include css': true,
-	'resolve url': true,
-	paths: [
-		ENV.LIB_PATH
-	]
+	'resolve url': true
 };
 
 const svgExtractor = new SVGSpriteExtractPlugin(ENV.SVG_SPRITE_ENTRY,
@@ -28,15 +24,11 @@ const plugins = [
 
 const noParse = [
 	ENV.CORE_JS,
-	ENV.REGENERATOR_RUNTIME,
-	...glob.sync(path.join(ENV.LIB_PATH, '/*'), {
-		ignore: ENV.ES6
-	}).map(file => path.resolve(file))
+	ENV.REGENERATOR_RUNTIME
 ];
 
 const alias = {
 	config: path.resolve(ENV.SRC_PATH, 'config/styles.config.styl'),
-	// theme: path.resolve(ENV.ROOT, 'config/theme/theme.js')
 };
 
 const loaders = [
@@ -73,8 +65,9 @@ const loaders = [
 	//css
 	{
 		test: /\.css$/,
+		name: 'css',
 		loader: [
-			'style-loader',
+			'style',
 			'css-loader?localIdentName=[name]__[local]__[hash:base64:5]',
 			'postcss-loader'
 		].join('!'),
@@ -86,8 +79,9 @@ const loaders = [
 	//css-modules
 	{
 		test: /\.css$/,
+		name: 'css-modules',
 		loader: [
-			'style-loader',
+			'style',
 			'css-loader?modules&localIdentName=[name]__[local]__[hash:base64:5]',
 			'postcss-loader'
 		].join('!'),
@@ -99,8 +93,9 @@ const loaders = [
 	//stylus
 	{
 		test: /\.styl$/,
+		name: 'stylus',
 		loader: [
-			'style-loader',
+			'style',
 			'css-loader?localIdentName=[name]__[local]__[hash:base64:5]',
 			'postcss-loader',
 			`stylus-loader?${JSON.stringify(STYLUS_OPTIONS)}`
@@ -113,8 +108,9 @@ const loaders = [
 	//stylus-modules
 	{
 		test: /\.styl$/,
+		name: 'stylus-modules',
 		loader: [
-			'style-loader',
+			'style',
 			'css-loader?modules&localIdentName=[name]__[local]__[hash:base64:5]',
 			'postcss-loader',
 			`stylus-loader?${JSON.stringify(STYLUS_OPTIONS)}`
@@ -136,10 +132,6 @@ export default () => ({
 		noParse
 	},
 	resolve: {
-		modulesDirectories: [
-			ENV.NODE_MODULES_PATH,
-			ENV.LIB_PATH
-		],
 		alias,
 		extensions: [
 			'',
