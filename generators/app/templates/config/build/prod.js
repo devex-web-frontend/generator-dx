@@ -26,8 +26,7 @@ const plugins = [
 		{
 			name: 'vendor',
 			path: [
-				ENV.NODE_MODULES_PATH,
-				ENV.LIB_PATH
+				ENV.NODE_MODULES_PATH
 			]
 		}
 	], {
@@ -50,7 +49,7 @@ export default (includeRegeneratorRuntime = false) => {
 	const config = shared();
 
 	const index = [
-		// ENV.CORE_JS,
+		ENV.CORE_JS,
 		ENV.FETCH,
 		path.resolve(ENV.SRC_PATH, 'index.tsx')
 	];
@@ -76,11 +75,7 @@ export default (includeRegeneratorRuntime = false) => {
 			loaders
 		},
 		resolve: {
-			...config.resolve,
-			alias: {
-				...config.resolve.alias,
-				...alias
-			}
+			...config.resolve
 		},
 		plugins: [
 			...config.plugins,

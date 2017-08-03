@@ -36,6 +36,7 @@
     "dx-util": "~0.11.4",
     "eslint": "^4.2.0",
     "eslint-plugin-babel": "^4.1.1",
+    "extract-text-webpack-plugin": "^1.0.1",
     "glob": "^7.1.2",
     "html-webpack-plugin": "^2.29.0",
     "isomorphic-fetch": "^2.2.1",
